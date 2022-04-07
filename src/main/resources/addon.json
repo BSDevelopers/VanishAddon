@@ -8,5 +8,16 @@
   "description": [
     "&7This addon links into SuperVanish/PremiumVanish",
     "&7To handle when a player toggles being in vanish"
+  ],
+
+  "plugin-support": [
+    {
+      "name": "SuperVanish",
+      "url": "https://www.spigotmc.org/resources/1331/"
+    },
+    {
+      "name": "PremiumVanish",
+      "url": "https://www.spigotmc.org/resources/14404/"
+    }
   ]
 }

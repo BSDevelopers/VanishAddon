@@ -3,16 +3,13 @@ package addon.brainsynder.vanish;
 import de.myzelyam.api.vanish.PostPlayerHideEvent;
 import de.myzelyam.api.vanish.PostPlayerShowEvent;
 import de.myzelyam.api.vanish.VanishAPI;
-import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
-import org.bukkit.plugin.Plugin;
 import simplepets.brainsynder.addon.AddonConfig;
 import simplepets.brainsynder.addon.PetModule;
 import simplepets.brainsynder.api.Namespace;
 import simplepets.brainsynder.api.event.entity.PetEntitySpawnEvent;
 import simplepets.brainsynder.api.plugin.SimplePets;
 import simplepets.brainsynder.api.user.PetUser;
-import simplepets.brainsynder.debug.DebugBuilder;
 
 @Namespace(namespace = "VanishAddon")
 public class VanishAddonAddon extends PetModule {
@@ -23,23 +20,6 @@ public class VanishAddonAddon extends PetModule {
     @Override
     public void init() {
 
-    }
-
-
-    @Override
-    public boolean shouldEnable() {
-        Plugin superVanish = Bukkit.getPluginManager().getPlugin("SuperVanish");
-        if ((superVanish != null) && superVanish.isEnabled()) return true;
-
-        Plugin premiumVanish = Bukkit.getPluginManager().getPlugin("PremiumVanish");
-        if ((premiumVanish != null) && premiumVanish.isEnabled()) return true;
-
-        SimplePets.getDebugLogger().debug(DebugBuilder.build(getClass()).setLevel(SimplePets.ADDON).setMessages(
-                "You seem to be missing either SuperVanish/PremiumVanish...",
-                "SuperVanish: https://www.spigotmc.org/resources/1331/",
-                "PremiumVanish: https://www.spigotmc.org/resources/14404/"
-        ));
-        return false;
     }
 
     @Override
