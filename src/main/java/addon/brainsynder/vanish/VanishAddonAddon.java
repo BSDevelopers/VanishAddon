@@ -1,6 +1,5 @@
 package addon.brainsynder.vanish;
 
-import com.google.common.collect.Lists;
 import de.myzelyam.api.vanish.PostPlayerHideEvent;
 import de.myzelyam.api.vanish.PostPlayerShowEvent;
 import de.myzelyam.api.vanish.VanishAPI;
@@ -8,17 +7,15 @@ import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.plugin.Plugin;
 import simplepets.brainsynder.addon.AddonConfig;
-import simplepets.brainsynder.addon.PetAddon;
+import simplepets.brainsynder.addon.PetModule;
 import simplepets.brainsynder.api.Namespace;
 import simplepets.brainsynder.api.event.entity.PetEntitySpawnEvent;
 import simplepets.brainsynder.api.plugin.SimplePets;
 import simplepets.brainsynder.api.user.PetUser;
 import simplepets.brainsynder.debug.DebugBuilder;
 
-import java.util.List;
-
 @Namespace(namespace = "VanishAddon")
-public class VanishAddonAddon extends PetAddon {
+public class VanishAddonAddon extends PetModule {
     private boolean preventPets = true;
     private String reason;
 
@@ -53,24 +50,6 @@ public class VanishAddonAddon extends PetAddon {
 
         preventPets = config.getBoolean("prevent-new-pets.enabled", true);
         reason = config.getString("prevent-new-pets.reason", "You are currently vanished");
-    }
-
-    @Override
-    public double getVersion() {
-        return 0.1;
-    }
-
-    @Override
-    public String getAuthor() {
-        return "brainsynder";
-    }
-
-    @Override
-    public List<String> getDescription() {
-        return Lists.newArrayList(
-                "&7This addon links into SuperVanish/PremiumVanish",
-                "&7To handle when a player toggles being in vanish"
-        );
     }
 
     @EventHandler

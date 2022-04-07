@@ -1,0 +1,12 @@
+{
+  "name": "VanishAddon",
+  "author": "brainsynder",
+
+  "version": 0.2,
+  "supported-build": 163,
+
+  "description": [
+    "&7This addon links into SuperVanish/PremiumVanish",
+    "&7To handle when a player toggles being in vanish"
+  ]
+}
